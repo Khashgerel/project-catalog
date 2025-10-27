@@ -11,9 +11,10 @@ List<Document> docs = (List<Document>) request.getAttribute("documents");
 		<label class="form-label">Project Name</label> <input type="text"
 			class="form-control" name="name" value="<%=p.getName()%>" required>
 	</div>
-		<div class="mb-3">
+	<div class="mb-3">
 		<label class="form-label">Project Name (EN)</label> <input type="text"
-			class="form-control" name="name_en" value="<%=p.getNameEN()%>" required>
+			class="form-control" name="name_en" value="<%=p.getNameEN()%>"
+			required>
 	</div>
 	<div class="mb-3">
 		<label class="form-label">Owner</label> <input type="text"
@@ -38,8 +39,6 @@ List<Document> docs = (List<Document>) request.getAttribute("documents");
 	<%
 	for (Document d : docs) {
 	%>
-	<li><span><%=d.getOriginalName()%></span></li>
-	<%
-	}
+	<li><span><%=d.getOriginalName()%></span></li>}}
 	%>
 </ul> -->

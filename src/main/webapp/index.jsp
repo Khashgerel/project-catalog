@@ -11,6 +11,14 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+
+<div class="d-flex justify-content-end mb-3">
+  <div class="emp-actionbar">
+    <button id="btnAddProject" type="button" class="btn btn-primary">➕ New Project</button>
+    <button type="submit" form="projectForm" class="btn btn-outline">💾 Save Project</button>
+  </div>
+</div>
+
 	<div class="container bg-orange-300">
 		<div class="header">
 			<h1>Сэдвийн цуглуулга</h1>
@@ -52,8 +60,7 @@
 						<td><a href="<%=p.getGithub()%>"><%=p.getGithub()%></a></td>
 						<td>
 							<div class="actions">
-								<button class="btn btn-sm" onclick="openModal(<%=p.getId()%>)">Show
-									More</button>
+								<button class="btn btn-sm" onclick="openModal(<%=p.getId()%>)">Дэлгэрэнгүй</button>
 							</div>
 						</td>
 					</tr>
@@ -101,5 +108,46 @@ function triggerUpload(id){
   document.getElementById('fileInput').click()
 }
 </script>
+
+<div id="cmBackdrop" class="corner-modal-backdrop"></div>
+<div id="cornerModal" class="corner-modal emp-glass" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+  <div class="cm-header">
+    <div class="d-flex align-items-center gap-2">
+      <span class="badge-soft">New</span>
+      <h6 id="cmTitle" class="m-0">Add / Edit Project</h6>
+    </div>
+    <button type="button" class="cm-close" id="cmCloseBtn">&times;</button>
+  </div>
+  <div class="cm-body">
+    <jsp:include page="modal.jsp" flush="true" />
+  </div>
+</div>
+
+<script>
+  (function(){
+    const addBtn = document.getElementById('btnAddProject');
+    const backdrop = document.getElementById('cmBackdrop');
+    const modal = document.getElementById('cornerModal');
+    const closeBtn = document.getElementById('cmCloseBtn');
+
+    function openCornerModal(){
+      backdrop.classList.add('show');
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeCornerModal(){
+      backdrop.classList.remove('show');
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    if(addBtn){ addBtn.addEventListener('click', openCornerModal); }
+    if(backdrop){ backdrop.addEventListener('click', closeCornerModal); }
+    if(closeBtn){ closeBtn.addEventListener('click', closeCornerModal); }
+    // Close on ESC
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape'){ closeCornerModal(); } });
+  })();
+</script>
+
 </body>
 </html>
