@@ -1,0 +1,131 @@
+:root {
+	--bg: #fff8f3;
+	--card: #ffe9db;
+	--accent: #ff9f66;
+	--accent2: #ffb888;
+	--text: #3b2f2f
+}
+
+body {
+	margin: 0;
+	font-family: Inter, system-ui, Segoe UI, Arial, sans-serif;
+	background: var(--bg);
+	color: var(--text)
+}
+
+.container {
+	max-width: 1100px;
+	margin: 40px auto;
+	padding: 0 16px
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px
+}
+
+h1 {
+	margin: 0;
+	font-weight: 700;
+	letter-spacing: .3px
+}
+
+.btn {
+	border: none;
+	padding: 10px 16px;
+	border-radius: 10px;
+	background: var(--accent);
+	color: white;
+	cursor: pointer;
+	font-weight: 600
+}
+
+.btn:hover {
+	opacity: .9
+}
+
+.table-wrap {
+	background: var(--card);
+	border-radius: 14px;
+	padding: 12px 12px 6px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, .08)
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 10px;
+	overflow: hidden
+}
+
+th, td {
+	padding: 12px 14px;
+	border-bottom: 1px solid #eee
+}
+
+th {
+	background: #fff2ea;
+	text-align: left
+}
+
+.actions {
+	display: flex;
+	gap: 8px
+}
+
+.badge {
+	padding: 4px 10px;
+	border-radius: 50px;
+	font-size: 12px;
+	font-weight: 700
+}
+
+.badge-yes {
+	background: #e7fde7;
+	color: #176c2f
+}
+
+.badge-no {
+	background: #fff0f0;
+	color: #8a1c1c
+}
+
+.form-inline {
+	display: flex;
+	gap: 8px;
+	align-items: center
+}
+
+input[type=text] {
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 10px
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+	gap: 6px
+}
+
+.modal-header {
+	background: var(--accent2);
+	color: #3b2f2f
+}
+
+.link {
+	color: #b24a1a;
+	text-decoration: none
+}
+
+.link:hover {
+	text-decoration: underline
+}
+
+.top-right {
+	display: flex;
+	gap: 10px
+}

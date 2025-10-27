@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         version="5.0"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
+
+  <context-param>
+    <param-name>dbPath</param-name>
+    <param-value>${catalina.base}/catalog-data/catalog.db</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>uploadDir</param-name>
+    <param-value>${catalina.base}/catalog-uploads</param-value>
+  </context-param>
+
+  <servlet>
+    <servlet-name>InitServlet</servlet-name>
+    <servlet-class>servlet.InitServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ListProjectsServlet</servlet-name>
+    <servlet-class>servlet.ListProjectsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListProjectsServlet</servlet-name>
+    <url-pattern>/projects</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AddProjectServlet</servlet-name>
+    <servlet-class>servlet.AddProjectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddProjectServlet</servlet-name>
+    <url-pattern>/project/add</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>GetProjectServlet</servlet-name>
+    <servlet-class>servlet.GetProjectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetProjectServlet</servlet-name>
+    <url-pattern>/project</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UpdateProjectServlet</servlet-name>
+    <servlet-class>servlet.UpdateProjectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateProjectServlet</servlet-name>
+    <url-pattern>/project/update</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <servlet-class>servlet.FileUploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <url-pattern>/file/upload</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
