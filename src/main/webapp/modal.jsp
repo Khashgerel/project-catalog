@@ -8,16 +8,16 @@ List<Document> docs = (List<Document>) request.getAttribute("documents");
 	method="post">
 	<input type="hidden" name="id" value="<%=p.getId()%>">
 	<div class="mb-3">
-		<label class="form-label">Project Name</label> <input type="text"
+		<label class="form-label">Сэдвийн нэр</label> <input type="text"
 			class="form-control" name="name" value="<%=p.getName()%>" required>
 	</div>
 	<div class="mb-3">
-		<label class="form-label">Project Name (EN)</label> <input type="text"
+		<label class="form-label">Сэдвийн нэр (EN)</label> <input type="text"
 			class="form-control" name="name_en" value="<%=p.getNameEN()%>"
 			required>
 	</div>
 	<div class="mb-3">
-		<label class="form-label">Owner</label> <input type="text"
+		<label class="form-label">Оюутны нэр</label> <input type="text"
 			class="form-control" name="owner" value="<%=p.getOwner()%>" required>
 	</div>
 	<div class="mb-3">
@@ -29,16 +29,7 @@ List<Document> docs = (List<Document>) request.getAttribute("documents");
 		<label class="form-label">Comments/Notes</label>
 		<textarea class="form-control" name="notes" rows="4"><%=p.getNotes() == null ? "" : p.getNotes()%></textarea>
 	</div>
-	<button type="submit" class="btn">Save Changes</button>
+	<button type="submit" class="btn">Хадгалах</button>
 </form>
 
 <hr class="my-4">
-
-<!--  <h5>Files</h5>
-<ul>
-	<%
-	for (Document d : docs) {
-	%>
-	<li><span><%=d.getOriginalName()%></span></li>}}
-	%>
-</ul> -->

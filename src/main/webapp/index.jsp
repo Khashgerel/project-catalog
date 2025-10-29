@@ -29,7 +29,7 @@
 					<input type="text" name="name_en" placeholder="Project name (EN)" required>
 					<input type="text" name="owner" placeholder="Owner" required>
 					<input type="text" name="github" placeholder="Github Repo Link" required>
-					<button class="btn" type="submit">Add New Project</button>
+					<button class="btn" type="submit">Шинэ сэдэв</button>
 				</form>
 			</div>
 		</div>
