@@ -32,4 +32,3 @@ List<Document> docs = (List<Document>) request.getAttribute("documents");
 	<button type="submit" class="btn">Хадгалах</button>
 </form>
 
-<hr class="my-4">

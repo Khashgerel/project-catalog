@@ -7,6 +7,16 @@
 	--emp-radius: 16px;
 }
 
+.container{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+
 .emp-glass {
 	background: linear-gradient(to bottom right, rgba(255, 255, 255, .65),
 		rgba(255, 255, 255, .35));
@@ -151,4 +161,76 @@ label.form-label {
 
 hr {
 	border-color: rgba(140, 140, 220, .3);
+}
+/* Global Table Styles for a cleaner look */
+.table-wrap table {
+    width: 100%;
+    border-collapse: separate; /* Use separate to allow border-radius on rows/cells (if we used it) */
+}
+
+/* Remove default table borders */
+.table {
+    --bs-table-color: inherit;
+    --bs-table-bg: transparent;
+    --bs-table-border-color: rgba(140, 140, 220, .15); /* Lighter border for contrast */
+    --bs-table-striped-bg: rgba(140, 140, 220, .03); /* Very light stripe */
+    --bs-table-active-bg: rgba(140, 140, 220, .08);
+    --bs-table-hover-bg: rgba(140, 140, 220, .05); /* Subtle hover */
+}
+
+.table > :not(caption) > * > * {
+    padding: .75rem 1rem;
+}
+
+.table th {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .8rem;
+    color: #4a4a4a;
+}
+
+.table tbody tr:hover {
+    background-color: var(--bs-table-hover-bg);
+}
+
+.table-wrap {
+    border-radius: var(--emp-radius);
+    overflow: hidden; /* Ensures table content respects the glass container's radius */
+}
+
+/* Style for the Github Link badge */
+.github-link {
+    text-decoration: none;
+    font-weight: 600;
+    padding: .3rem .7rem;
+    display: inline-block;
+}
+
+/* List group style for Documents in modal */
+.list-group {
+    border-radius: var(--emp-radius) !important;
+    overflow: hidden;
+    border: var(--emp-border) !important;
+}
+
+.list-group-item {
+    border: none !important;
+    border-bottom: 1px solid rgba(140, 140, 220, .15) !important;
+    background: transparent !important;
+    padding: .75rem 1rem;
+}
+
+.list-group-item:last-child {
+    border-bottom: none !important;
+}
+
+.list-group-item a {
+    color: #1a1a1a;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color .15s ease;
+}
+
+.list-group-item a:hover {
+    color: #4a7dff; /* A color from the primary button gradient */
 }
