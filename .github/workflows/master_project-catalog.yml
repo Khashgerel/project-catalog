@@ -50,4 +50,4 @@ jobs:
           app-name: 'Project-Catalog'
           slot-name: 'Production'
           package: '*.war'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_39052FA4E8DE4768B7BEBE3F5804D714 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3F83F2266D8E4495A3034145F533A7F8 }}
